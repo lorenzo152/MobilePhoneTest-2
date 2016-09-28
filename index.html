@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+ body{
+ 	font-size: 100%;
+ }
+
+	.abc {
+		display: none;
+	}
+
+
+
+	.def{
+		display: block;
+	}
+
+	.burger-menu {
+	  width: 23px;
+	  float: right;
+	  padding: 2px;
+	  margin: 5px;
+	}
+
+	
+
+
+	.show{
+
+	  border: 38px solid #eee;
+	  font-family: helvetica,sans-serif;
+	  font-size: 15px;
+	  margin: 10px auto 0;
+	  padding: 10px;
+	  text-align: center;
+	  width: 94px;
+
+	}
+
+	.menu > ol > li {
+		display: inline;
+		padding: 10px;
+		/*float: right;*/
+		
+	}
+
+	.menu {
+		float: right;	
+
+	}
+
+
+
+	.menu > ol > li > a {
+		text-decoration: none;
+
+	}
+
+	.mobi-menu{
+			display: none;
+			
+		}
+	.mobi-div > ol > li{
+		list-style: none;
+		text-decoration: none;
+		
+		background-color:#eee;
+		font-size:20px;
+
+	}
+
+	@media only screen and (max-width: 360px) {
+		body {
+			font-size: 50%;
+		}
+
+		.menu{
+			display: none;
+		}
+
+		.mobi-menu{
+			display: block;
+
+			
+		}
+
+
+
+	   
+	}
+
+
+</style>
+<body>
+
+
+<div class="menu">
+
+	<ol>
+		<li>
+			<a href="#">HOME</a>
+		</li>
+		<li>
+			<a href="#">ABOUT</a>
+		</li>		
+	</ol>
+	
+</div>
+
+
+
+<div class="mobi-menu">
+	<img src="burger.jpg" class="burger-menu">
+	<br>
+	<br>
+	<br>
+	<div style="display: none" class="mobi-div">
+		<ol>
+			<li>HOME</li>
+			<li>ABOUT</li>
+		</ol>
+	</div>
+</div>
+
+<br><br>
+
+<div>
+	<h1 class="def">This is a test</h1>	
+</div> 
+
+<button class="a">Test Ajax</button>
+<div class="show abc">
+	doofy doof doof
+</div>
+</body>
+</html>
+<script
+src="https://code.jquery.com/jquery-2.2.4.js"
+integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+
+	$('.a').click(function(event){
+		event.preventDefault();		
+
+		$('.show').fadeIn(1000,function(e){
+				$('h1').fadeOut(1000);
+		});
+
+
+
+	})
+
+	$('.burger-menu').click(function(e){
+		
+		var burgerStatus = 		$('.burger-menu').attr('src');
+
+
+		if(burgerStatus == "burger.jpg"){
+			$('.burger-menu').attr('src','openBurger.jpg');	
+			$('.mobi-div').show();
+		}else{
+			$('.burger-menu').attr('src','burger.jpg');	
+			$('.mobi-div').hide();
+		}
+		
+			
+
+
+
+	});
+
+</script>
